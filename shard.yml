@@ -1,0 +1,9 @@
+name: pipeline
+version: 0.1.0
+
+authors:
+  - ʕ·ᴥ·ʔAKJ <arcage@denchu.org>
+
+crystal: 0.20.3
+
+license: MIT
