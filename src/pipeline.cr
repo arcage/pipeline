@@ -22,16 +22,20 @@ module Pipeline
 
     # Activates command.
     #
-    # This read each line from `input` and puts to `output` after convertting it with `#proc`.
+    # This reads each line from `input` and converts it with `#proc`.
+    # When converted line is not `nil`, it will be put to `output`.
     def run(input : IO = ARGF, output : IO = STDOUT, chomp : Bool = true)
       input.each_line(chomp: chomp) do |line|
-        output.puts proc(line)
+        unless (converted_line = proc(line)).nil?
+          output.puts converted_line
+        end
       end
     end
 
     # Converts single line string.
     #
     # This method will be called from `#run` method for each line from input IO.
+    #
     abstract def proc(line : String)
   end
 end

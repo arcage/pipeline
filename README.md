@@ -53,7 +53,7 @@ end
 #output: INPUT TEXT FILE
 ```
 
-Override `#initialize()` and call `super(&block)`, then you can set flags for the internal `OptionParser` object in the block.
+Override `#initialize` and call `super(&block)`, then you can set flags for the internal `OptionParser` object in the block.
 
 ```crystal
 # up_or_camel_case.cr
